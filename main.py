@@ -9,22 +9,44 @@ from data import data
 from cover_art import logo
 from cover_art import vs
 
+# select a random playerin the dictionary
+PLAYER_1 = random.choice(data)
+PLAYER_2 = random.choice(data)
+
+
+def compare():
+    if PLAYER_1['follower_count'] > PLAYER_2['follower_count']:
+        return True
+    else:
+        return False
+
 
 def game():
+    counter = 0
     # print logo
     print(logo)
-    # select a random playerin the dictionary
-    player1 = random.choice(data)
     # print the random player1 description
     print(
-        f"Compare A: {player1['name']}, a {player1['description']} from {player1['country']}")
+        f"Compare A: {PLAYER_1['name']}, a {PLAYER_1['description']} from {PLAYER_1['country']}")
     # print the vs logo
     print(vs)
     # select a random playerin the dictionary
-    player2 = random.choice(data)
     # print the random player1 description
     print(
-        f"Compare B: {player2['name']}, a {player2['description']} from {player2['country']}")
+        f"Compare B: {PLAYER_2['name']}, a {PLAYER_2['description']} from {PLAYER_2['country']}")
+
+    choice = input("Who has more followers? Type 'A' or 'B': ")
+
+    if choice == 'A' and compare() == True:
+        counter += 1
+    elif choice == 'B' and compare() == True:
+        counter += 1
+    elif choice == 'A' and compare() == False:
+        print("You lost!")
+    else:
+        print("You lost!")
+
+    print(counter)
 
 
 game()
