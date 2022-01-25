@@ -5,9 +5,29 @@
 #              has the most follower count searched for the most by selecting higher or lower.
 #              The objective is to get the most right in a row.
 import random
-import data
-import cover_art
+from data import data
+from cover_art import logo
+from cover_art import vs
 
+
+def game():
+    # print logo
+    print(logo)
+    # select a random playerin the dictionary
+    player1 = random.choice(data)
+    # print the random player1 description
+    print(
+        f"Compare A: {player1['name']}, a {player1['description']} from {player1['country']}")
+    # print the vs logo
+    print(vs)
+    # select a random playerin the dictionary
+    player2 = random.choice(data)
+    # print the random player1 description
+    print(
+        f"Compare B: {player2['name']}, a {player2['description']} from {player2['country']}")
+
+
+game()
 # TODO Add higher lower logo
 # TODO randomly pickout from dictionary make, sure its not the same
 # TODO print the account name, discription, then country
