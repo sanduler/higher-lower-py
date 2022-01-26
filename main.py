@@ -11,7 +11,7 @@ from cover_art import vs
 
 
 def compare(pla1, pla2):
-    """This function compares two follower counts between two users"""
+    """This function compares two follower counts between two users."""
 
     if (pla1['follower_count']) > (pla2['follower_count']):
         return 1
