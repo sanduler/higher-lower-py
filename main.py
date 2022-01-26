@@ -9,53 +9,68 @@ from data import data
 from cover_art import logo
 from cover_art import vs
 
-# select a random playerin the dictionary
-PLAYER_1 = random.choice(data)
-PLAYER_2 = random.choice(data)
 
+def compare(pla1, pla2):
+    """This function compares two follower counts between two users."""
 
-def compare():
-    if PLAYER_1['follower_count'] > PLAYER_2['follower_count']:
-        return True
-    else:
-        return False
+    if (pla1['follower_count']) > (pla2['follower_count']):
+        return 1
+    elif (pla1['follower_count']) < (pla2['follower_count']):
+        return 0
 
 
 def game():
+    """This function is the main game function responsible for the core function of the game
+    """
+    # Keeps track of the users streak score
     counter = 0
     # print logo
-    print(logo)
+    game_over = False
     # print the random player1 description
-    print(
-        f"Compare A: {PLAYER_1['name']}, a {PLAYER_1['description']} from {PLAYER_1['country']}")
-    # print the vs logo
-    print(vs)
-    # select a random playerin the dictionary
-    # print the random player1 description
-    print(
-        f"Compare B: {PLAYER_2['name']}, a {PLAYER_2['description']} from {PLAYER_2['country']}")
+    while not game_over:
+        player1 = random.choice(data)
+        player2 = random.choice(data)
+        print(logo)
+        if counter > 0:
+            print(f"You are right! Current score: {counter}.")
 
-    choice = input("Who has more followers? Type 'A' or 'B': ")
+        # print the random player2 description
+        print(
+            f"Compare A: {player1['name']}, a {player1['description']} from {player1['country']}")
+        # print the vs logo
+        print(vs)
 
-    if choice == 'A' and compare() == True:
-        counter += 1
-    elif choice == 'B' and compare() == True:
-        counter += 1
-    elif choice == 'A' and compare() == False:
-        print("You lost!")
-    else:
-        print("You lost!")
+        # select a random player in the dictionary
+        # print the random player2 description
+        print(
+            f"Compare B: {player2['name']}, a {player2['description']} from {player2['country']}")
 
-    print(counter)
+        choice = input("Who has more followers? Type 'A' or 'B': ").upper()
+
+        if choice == 'A':
+            if compare(player1, player2) == 1:
+                counter += 1
+            elif compare(player1, player2) == 0:
+                print(f"Sorry, that's wrong. Final score: {counter}.")
+                break
+        elif choice == 'B':
+            if compare(player1, player2) == 0:
+                print("Im here B")
+                counter += 1
+            elif compare(player1, player2) == 1:
+                print(f"Sorry, that's wrong. Final score: {counter}.")
+                break
+        print(counter)
 
 
 game()
-# TODO Add higher lower logo
-# TODO randomly pickout from dictionary make, sure its not the same
-# TODO print the account name, discription, then country
-# TODO print the 'Vs' Logo
-# TODO print the vs account name, discription, then country
-# TODO print who has more follower_count
-# TODO compare and give user the prompt "Who has more followers? Type 'A' or 'B':"
-# TODO repeat propt until the user guesses incorrectly 'Sorry, that's wrong. Final score:'
-# TODO create a counter for final score
+
+# TODO (DONE) Add higher lower logo
+# TODO (DONE) randomly pickout from dictionary make, sure its not the same
+# TODO (DONE) print the account name, discription, then country
+# TODO (DONE) print the 'Vs' Logo
+# TODO (DONE) print the vs account name, discription, then country
+# TODO (DONE) print who has more follower_count
+# TODO (DONE) compare and give user the prompt "Who has more followers? Type 'A' or 'B':"
+# TODO (DONE) repeat propt until the user guesses incorrectly 'Sorry, that's wrong. Final score:'
+# TODO (DONE) create a counter for final score
