@@ -33,12 +33,15 @@ def game():
         print(logo)
         if counter > 0:
             print(f"You are right! Current score: {counter}.")
+
+        # print the random player2 description
         print(
             f"Compare A: {player1['name']}, a {player1['description']} from {player1['country']}")
         # print the vs logo
         print(vs)
-        # select a random playerin the dictionary
-        # print the random player1 description
+
+        # select a random player in the dictionary
+        # print the random player2 description
         print(
             f"Compare B: {player2['name']}, a {player2['description']} from {player2['country']}")
 
@@ -61,6 +64,7 @@ def game():
 
 
 game()
+
 # TODO (DONE) Add higher lower logo
 # TODO (DONE) randomly pickout from dictionary make, sure its not the same
 # TODO (DONE) print the account name, discription, then country
@@ -69,4 +73,4 @@ game()
 # TODO (DONE) print who has more follower_count
 # TODO (DONE) compare and give user the prompt "Who has more followers? Type 'A' or 'B':"
 # TODO (DONE) repeat propt until the user guesses incorrectly 'Sorry, that's wrong. Final score:'
-# TODO create a counter for final score
+# TODO (DONE) create a counter for final score
