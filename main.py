@@ -51,26 +51,16 @@ def game():
             if compare(player1, player2) == 1:
                 counter += 1
             elif compare(player1, player2) == 0:
-                print(f"Sorry, that's wrong. Final score: {counter}.")
+                print(f"\nSorry, that's wrong. Final score: {counter}.\n")
                 break
         elif choice == 'B':
             if compare(player1, player2) == 0:
                 print("Im here B")
                 counter += 1
             elif compare(player1, player2) == 1:
-                print(f"Sorry, that's wrong. Final score: {counter}.")
+                print(f"\nSorry, that's wrong. Final score: {counter}.\n")
                 break
         print(counter)
 
 
 game()
-
-# TODO (DONE) Add higher lower logo
-# TODO (DONE) randomly pickout from dictionary make, sure its not the same
-# TODO (DONE) print the account name, discription, then country
-# TODO (DONE) print the 'Vs' Logo
-# TODO (DONE) print the vs account name, discription, then country
-# TODO (DONE) print who has more follower_count
-# TODO (DONE) compare and give user the prompt "Who has more followers? Type 'A' or 'B':"
-# TODO (DONE) repeat propt until the user guesses incorrectly 'Sorry, that's wrong. Final score:'
-# TODO (DONE) create a counter for final score
